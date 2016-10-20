@@ -1,0 +1,59 @@
+*{
+	font-family: helvetica;
+	font-weight: lighter;
+}
+body{
+	background:white;
+	/**/
+	overflow: hidden;
+}
+
+nav{
+	position: fixed;
+	height: 75px;
+	background: #111;
+	width: 100%;
+	top:0px;
+	left:0px;
+	color:white;
+	z-index: 999;
+}
+
+canvas{
+	position: fixed;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	z-index: -999;
+	
+}
+
+.title{
+	position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 3em;
+    padding: 10px 0;
+    font-weight: lighter;
+}
+
+.project{
+	width:66%;
+	height:50%;
+	background: #111;
+	margin: 10px auto;
+}
+
+.projectContainer{
+	position: absolute;
+	top: 100px;
+	width:100%;
+}
+
+.summary{
+	padding: 20px;
+	color:white;
+}
