@@ -10,13 +10,19 @@ body{
 
 nav{
 	position: fixed;
-	height: 75px;
-	background: #111;
-	width: 100%;
-	top:0px;
-	left:0px;
-	color:white;
-	z-index: 999;
+    height: 109px;
+    background: rgba(10,10,20, 0);
+    width: 201px;
+    top: 0px;
+    left: 0px;
+    color: white;
+    z-index: 999;
+
+	/*border-bottom: 2px solid white;
+	-moz-background-clip: padding;    
+  -webkit-background-clip: padding;  
+  background-clip: padding-box; */
+  
 }
 
 canvas{
@@ -28,32 +34,121 @@ canvas{
 	z-index: -999;
 	
 }
+.transparentCover{
+	position: fixed;
+	overflow: hidden;
+	top:0px;
+	bottom: 0px;
+	left:0px;
+	right:0px;
+	background: rgba(0,0,0,.75);
+}
 
 .title{
-	position: relative;
+	position: absolute;
     width: 100%;
     margin: 0 auto;
     display: inline-block;
-    text-align: center;
-    font-size: 3em;
-    padding: 10px 0;
+    text-align: left;
+    font-size: 2em;
+    padding: 5px 20px;
     font-weight: lighter;
+    color:#ccc;
+}
+
+.menu{
+	position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+    right:0px;
+    font-size: 1.2em;
+    padding: 45px 20px;
+    font-weight: lighter;
+    color:#ccc;
+    line-height: 1.5em;
+}
+
+.menu a{
+	display: block;
+	color:#ccc;
+	text-decoration: none;
+}
+
+.menu a:hover{
+	color:#888;
+	cursor: pointer;
 }
 
 .project{
-	width:66%;
-	height:50%;
-	background: #111;
-	margin: 10px auto;
+	background: white;
+	margin: 5px -10px;
+	height: 300px;
+	overflow: hidden;
+	cursor: pointer;
+	border: 5px solid white;
 }
 
 .projectContainer{
 	position: absolute;
-	top: 100px;
+	top: 20px;
 	width:100%;
+	padding: 0 20%;
+	margin: 10px;
+}
+
+.innerContainer{
+	max-width: 640px;
 }
 
 .summary{
-	padding: 20px;
-	color:white;
+	color:black;
+}
+
+.thumb{
+	position: relative;
+    width: 105%;
+    left: 50%;
+    top: 142px;
+    transform: translate(-50%,-50%);
+}
+
+.vertical{
+	width:auto;
+	height:100%;
+}
+
+.explore{
+	width: 100%;
+    position: relative;
+    /* top: -60px; */
+    top:-60px;
+    overflow: hidden;
+    min-width: 425px;
+}
+
+.square{
+	width:100%;
+	position: relative;
+	bottom:40px;
+}
+@media(max-width: 672px){
+
+	.thumb{
+		width:auto;
+		height:100%;
+	}
+}
+
+.mograph{
+	height:100%;
+	position: relative;
+	transform: translateX(-30%);
+}
+
+.ramphs{
+	height:100%;
+	position: relative;
+	transform: translateX(-14%);
 }

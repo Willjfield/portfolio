@@ -1,41 +1,149 @@
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<script src="js/lib/three.min.js"></script>
 		<script src="js/lib/OrbitControls.js"></script>
+
+		<script src="js/lib/EffectComposer.js"></script>
+		<script src="js/lib/RenderPass.js"></script>
+		<script src="js/lib/MaskPass.js"></script>
+		<script src="js/lib/ShaderPass.js"></script>
+		<script src="js/lib/FilmPass.js"></script>
+
+		<script src="js/lib/CopyShader.js"></script>
+		<script src="js/lib/SSAOShader.js"></script>
+		<script src="js/lib/FXAAShader.js"></script>
+		<!-- <script src="js/lib/FilmShader.js"></script>
+		<script src="js/lib/FocusShader.js"></script>
+		<script src="js/lib/DOFMipMapShader.js"></script> -->
+
 		<script src="js/lib/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/lib/TweenLite.min.js"></script>
 		<title>Will J. Field Portfolio</title>
 	</head>
 	<body>
+		<div class="transparentCover"></div>
 		<nav>
-			<span class="title">Will J. Field Portfolio</span>
+			<span class="title">Will J. Field</span>
+			<span class="menu">
+				<a href="#">Resume</a>
+				<a href="#">Contact</a>
+			</span>
 		</nav>
 		<div class="projectContainer">
-			<div class="project">
-				<div class="summary">
-					<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
-					<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+			<div class="container-fluid innerContainer">
+				<div class="row-fluid">
+					<div class="col-md-8" >
+						<div class="project">
+							<div class="summary">
+								<img class="thumb" src="assets/thumbs/explore.png">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+					<div class="project">
+							<div class="summary">
+								<img class="thumb vertical" src="assets/thumbs/mograph.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="col-md-4" >
+						<div class="project">
+							<div class="summary">
+								<img class="thumb vertical" src="assets/thumbs/Ramphs.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+					<div class="project">
+							<div class="summary">
+								<img class="thumb" src="assets/thumbs/Kessler.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="col-md-6" >
+						<div class="project">
+							<div class="summary">
+								<img class="thumb" src="assets/thumbs/Logo.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="project">
+							<div class="summary">
+								<img class="thumb vertical" src="assets/thumbs/WOTW.png">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="row-fluid">
+					<div class="col-md-8" >
+						<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+					<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="col-md-4" >
+						<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+					<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="col-md-6" >
+						<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+					<div class="project">
+							<div class="summary">
+								<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
+								<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
+							</div>
+						</div>
+					</div>
+				</div> -->
 				</div>
 			</div>
-			<div class="project">
-				<div class="summary">
-					<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
-					<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
-				</div>
-			</div>
-			<div class="project">
-				<div class="summary">
-					<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
-					<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
-				</div>
-			</div>
-			<div class="project">
-				<div class="summary">
-					<p>Iterate quantitative vs. qualitative convergence food-truck sticky note fund integrate cortado driven user story human-centered design grok driven. Affordances moleskine innovate hacker big data user story thinker-maker-doer physical computing disrupt long shadow. Latte hacker co-working human-centered design ship it driven workflow fund latte. Prototype big data cortado ideate cortado iterate iterate iterate personas co-working. Cortado grok intuitive Steve Jobs fund pair programming experiential parallax iterate long shadow pitch deck pair programming latte.</p>
-					<p>Food-truck experiential human-centered design actionable insight 360 campaign SpaceTeam iterate thought leader parallax agile waterfall is so 2000 and late Steve Jobs latte iterate. Hacker disrupt fund ship it responsive agile cortado 360 campaign disrupt. Fund prototype convergence affordances 360 campaign earned media intuitive pitch deck human-centered design. Minimum viable product responsive long shadow personas big data SpaceTeam prototype agile quantitative vs. qualitative.</p>
-				</div>
-			</div>
-		</div>
+		
 		
 		<script src="js/shaders/fragment.js"></script>
 		<script src="js/shaders/vertex.js"></script>
