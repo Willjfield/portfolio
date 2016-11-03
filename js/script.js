@@ -2,10 +2,10 @@ var scene, camera, renderer, light, controls;
 var geometry, pointsGeometry, colors, meshes;
 var composer, effect;
 
-$(document).ready(function(){
+//$(document).ready(function(){
   init();
   animate();
-});
+//});
 
  
 function init() {
