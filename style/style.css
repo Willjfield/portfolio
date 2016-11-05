@@ -56,7 +56,8 @@ canvas{
 	bottom: 0px;
 	left:0px;
 	right:0px;
-	background: rgba(0,0,0,.75);
+	background-image: url("../assets/tile.png");
+	/*background: rgba(0,0,0,.5);*/
 }
 
 .title{
@@ -172,4 +173,14 @@ canvas{
 	height:100%;
 	position: relative;
 	transform: translateX(-14%);
+}
+
+.popUp{
+	position: absolute;
+	top: 6px;
+    left: 5px;
+    padding: 23px;
+    height:100%;
+    background:white;
+    opacity: 0;
 }

@@ -1,7 +1,7 @@
 var scene, camera, renderer, light, controls;
 var geometry, pointsGeometry, colors, meshes;
 var composer, effect;
-
+var activeProject = false;
 //$(document).ready(function(){
   init();
   animate();
@@ -14,7 +14,7 @@ function init() {
   renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setSize( window.innerWidth, window.innerHeight );
   //0x101016
-  renderer.setClearColor( 0x101016, 1);
+  renderer.setClearColor( 0x161623, 1);
 
   renderer.domElement.className = "background";
 
@@ -74,10 +74,10 @@ function init() {
     meshes.push(mesh);
     scene.add(mesh);
 
-    meshes[i].rotateZ((Math.random()-.5)*.5);
-    meshes[i].rotateY(Math.random());
-    meshes[i].position.x=(Math.random()-.5)*500;
-    meshes[i].position.y=(Math.random()-.5)*200;
+    meshes[i].rotateZ((Math.random(i)-.5)*.5);
+    meshes[i].rotateY(Math.random(i));
+    meshes[i].position.x=(Math.random(i)-.5)*500;
+    meshes[i].position.y=(Math.random(i)-.5)*200;
     meshes[i].position.z=-550+(Math.random()*500);
   }
  /*
@@ -90,6 +90,10 @@ function init() {
 }
  
 function animate() {
+              
+  if(!activeProject){
+    updateScroll();
+  } 
   requestAnimationFrame( animate );
  //composer.render();
  renderer.render( scene, camera );
@@ -127,26 +131,39 @@ var oldScroll = 0;
 var scrollAmnt = 0;
 
 function onScroll(e) {
-  var maxScroll = $(document).height()-window.innerHeight;
-  scrollAmnt += e.deltaY/10;
-  if(scrollAmnt<maxScroll){
-    if(window.scrollY>0){
-  	 camera.position.y-=e.deltaY/600;
-    }
-    
-    scrollAmnt < 0 ? scrollAmnt = 0 : {}
-    window.scrollTo(0,scrollAmnt)
-    for(var i=0;i<meshes.length;i++){
-      meshes[i].rotateY((window.scrollY-oldScroll)*.002*meshes[i].rotateAmount);
-      meshes[i].rotateX((window.scrollY-oldScroll)*.005*meshes[i].rotateAmount);
-    }
+  if(!activeProject){
+    var maxScroll = $(document).height()-window.innerHeight;
+    scrollAmnt += e.deltaY/10;
+    if(scrollAmnt<maxScroll){
+      if(window.scrollY>0){
+    	 camera.position.y-=e.deltaY/600;
+      }
+      
+      scrollAmnt < 0 ? scrollAmnt = 0 : {}
+      window.scrollTo(0,scrollAmnt)
+      // for(var i=0;i<meshes.length;i++){
+      //   meshes[i].rotateY((window.scrollY-oldScroll)*.002*meshes[i].rotateAmount);
+      //   meshes[i].rotateX((window.scrollY-oldScroll)*.005*meshes[i].rotateAmount);
+      // }
 
-    //camera.position.y += (oldScroll-window.scrollY)*.025;
-  	oldScroll = window.scrollY;
-    
-  }else{
-    scrollAmnt = maxScroll;
+      //camera.position.y += (oldScroll-window.scrollY)*.025;
+    	oldScroll = window.scrollY;
+      
+    }else{
+      scrollAmnt = maxScroll;
+    }
   }
+}
+
+function updateScroll(){
+    var maxScroll = $(document).height()-window.innerHeight;
+    console.log(window.scrollY);
+    //if(window.scrollY<maxScroll){
+      for(var i=0;i<meshes.length;i++){
+        meshes[i].rotation.set(meshes[i].rotateAmount+(window.scrollY*.002*meshes[i].rotateAmount),window.scrollY*.001*meshes[i].rotateAmount,window.scrollY*.001*meshes[i].rotateAmount);
+      }
+    //}
+
 }
 
 window.addEventListener( 'wheel', onScroll, false );
