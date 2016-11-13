@@ -157,7 +157,7 @@ function onScroll(e) {
 
 function updateScroll(){
     var maxScroll = $(document).height()-window.innerHeight;
-    console.log(window.scrollY);
+    //console.log(window.scrollY);
     //if(window.scrollY<maxScroll){
       for(var i=0;i<meshes.length;i++){
         meshes[i].rotation.set(meshes[i].rotateAmount+(window.scrollY*.002*meshes[i].rotateAmount),window.scrollY*.001*meshes[i].rotateAmount,window.scrollY*.001*meshes[i].rotateAmount);

@@ -55,6 +55,7 @@ $(document).ready(function(){
 					});
 				}
 			});
+			$(this).find("iframe").css("display","block");
 
 			TweenLite.to(tag, .3, {
 				css:{
@@ -78,6 +79,8 @@ $(document).ready(function(){
 				}, 
 				ease:Power2.easeOut
 			});
+
+			$(this).find("iframe").css("display","none");
 
 			TweenLite.to(tag, .3, {
 				css:{

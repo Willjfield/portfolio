@@ -9,10 +9,14 @@ body{
 	overflow: hidden;
 }
 
+iframe{
+	display: none;
+}
+
 nav{
 	position: fixed;
     height: 109px;
-    background: rgba(10,10,20, 0);
+    background: rgba(10,10,20, .5);
     width: 221px;
     top: 0px;
     left: 0px;
